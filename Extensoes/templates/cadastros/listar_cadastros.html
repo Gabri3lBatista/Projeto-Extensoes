@@ -24,6 +24,8 @@
                                     <th>Descricao</th>
                                     <th>Tutorial</th>
                                     <th>Ver</th>
+                                    <th>Status</th>
+                                    <th>Datas</th>
                                     <th>Editar</th>
                                     <th>Excluir</th>
                                 </tr>
@@ -40,6 +42,8 @@
                                     <td>{{ item.descricao }}</td>
                                     <td>{{ item.tutorial }}</td>
                                     <td>{{ item.ver }}</td>
+                                    <td>{{ item.status }}</td>
+                                    <td>{{ item.datas }}</td>
                                     <td><a href="{% url 'update' item.pk %}" class="btn btn-warning">editar</a></td>
                                     <td><a href="{% url 'deletar' item.pk %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
                                 </tr>

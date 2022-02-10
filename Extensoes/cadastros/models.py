@@ -8,7 +8,8 @@ class Grupos(models.Model):
     descricao = models.CharField('Descrição do projeto', max_length=200)
     tutorial = models.CharField('tutorial', max_length=200)
     ver = models.CharField('ver', max_length=200)
-    
+    status = models.CharField('status', max_length=200)
+    datas = models.DateField()
     
     def __str__(self):
         return self.grupo
