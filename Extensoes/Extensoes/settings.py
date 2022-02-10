@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cadastros',
+     #novas funcionalidades 
+    #serve para excluir os arrquivos editados
+    'django_cleanup.apps.CleanupConfig',
+    
+    #serve para melhorar o layout dos forms
+    'crispy_forms',
     
     
 ]
@@ -119,13 +125,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
-
+STATIC_URL = 'staticfiles/'
 STATIC_ROOT = 'staticfiles'
-
 STATICFILES_DIRS = [
-
-os.path.join(BASE_DIR, 'static') ]
+os.path.join(BASE_DIR, 'static') 
+]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 # Default primary key field type
