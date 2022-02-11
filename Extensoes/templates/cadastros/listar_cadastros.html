@@ -11,10 +11,10 @@
                 <h3>Listagem de Cadastros</h3>
             </div>
             <div class="ml-auto p-2 bd-highlight">
-                <button class="btn btn-primary">
+                <a class="btn btn-primary" href="{% url 'cadastro' %}">
                     <i class="fas fa-plus"></i>
                     Novo Cadastro
-                </button>
+                </a>
             </div>
           </div>
 
@@ -42,14 +42,16 @@
                             <td>{{ item.n_de_part }}</td>
                             <td>{{ item.descricao }}</td>
                             <td>{{ item.tutorial }}</td>
-                            <td                       
-                             class="text-center" ><a href="{{ item.ver }}" class="btn btn-secondary btn-mg disabled" tabindex="-1" role="button" aria-disabled="true">Link</a>
+                            <td class="text-center" >
+                                <a href="{{ item.ver }}" class="btn btn-primary " >
+                                    Link
+                                </a>
                             </td>
                             <td class="text-center" >
 
                                 <a href="#" class="btn btn-secondary mb-1"><i class="fas fa-list-ul "></i></a>
 
-                                <a href="{% url 'update' item.pk %}" class="btn btn-warning mb-1"><i class="fas fa-edit  "></i></a>
+                                <a href="{% url 'update' item.pk %}" class="btn btn-warning mb-1"><i class="fas fa-edit "></i></a>
 
                                 <a href="{% url 'deletar' item.pk %}" class="btn btn-danger mb-1"><i class="fa fa-trash " aria-hidden="true"></i></a> 
                                  
@@ -79,6 +81,7 @@
                     var table = $('#dataListagens').DataTable({
                         lengthChange: false,
                         "scrollX": true, "scrollCollapse": true,
+
                         buttons: ['copy', 'excel', 'pdf', 'colvis']
                     });
                     
