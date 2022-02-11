@@ -46,7 +46,7 @@
                 <div class="sidebar-brand-icon ">
                     <img src="{% static 'img/logo.png' %}" alt="" width="50" height="50">
                 </div>
-                <div class="sidebar-brand-text mx-3"> Extensões <sup>2022</sup></div>
+                <div class="sidebar-brand-text mx-3"> Extensões UFAC</div>
             </a>
 
             <!-- Divider -->
@@ -273,7 +273,7 @@
         src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" language="javascript"
         src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap4.min.js"></script>
-        <script type="text/javascript" language="javascript"
+        <script type="text/javascript" language="javascript"div_id_dataFim
         src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
         <script type="text/javascript" language="javascript"
         src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap4.min.js"></script>
@@ -309,8 +309,14 @@
                 $('#div_id_cliente').addClass('col-md-4');
                 $('#div_id_n_de_part').addClass('col-md-4');
                 $('#div_id_descricao').addClass('col-md-4');
-                $('#div_id_tutorial').addClass('col-md-4');
+                $('#div_id_tutorial').addClass('col-md-12');
                 $('#div_id_ver').addClass('col-md-4');
+                $('#div_id_status').addClass('col-md-4');
+                $('#div_id_dataIni').addClass('col-md-4');
+                $('#div_id_dataFim').addClass('col-md-4');
+                $('span:contains("*")').css('color', 'red');
+                //$('label:contains("N de part")').html('Número de Participantes<span class="text-danger">*</span>');
+                
               });        
         </script>
     
