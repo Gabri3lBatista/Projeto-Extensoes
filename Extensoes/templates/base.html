@@ -16,6 +16,8 @@
     <title>Admin Geral</title>
 
     {% endblock %}
+    
+    <link rel="icon" href="{% static 'img/logo_ufac.png' %}" type="image/png" sizes="16x16">
 
     <!-- Custom fonts for this template-->
     <link href={% static "fontawesome-free/css/all.min.css" %} rel="stylesheet" type="text/css">
@@ -42,9 +44,9 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'cadastro' %}">
                 <div class="sidebar-brand-icon ">
-                    <img src={% static "img/logo.png" %} alt="" width="50" height="50">
+                    <img src="{% static 'img/logo_ufac.png' %}" alt="" width="50" height="50">
                 </div>
-                <div class="sidebar-brand-text mx-3"> Cadastro <sup>2022</sup></div>
+                <div class="sidebar-brand-text mx-3"> Extensões <sup>2022</sup></div>
             </a>
 
             <!-- Divider -->
@@ -151,10 +153,10 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" >
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -299,6 +301,19 @@
         <script src={% static "js/demo/chart-area-demo.js" %}></script>
         <!-- <script src={% static "js/demo/chart-pie-demo.js" %}></script> -->
         <script src={% static "js/demo/chart-bar-demo.js" %}></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#div_id_grupo').addClass('col-md-4');
+                $('#div_id_projeto').addClass('col-md-4');
+                $('#div_id_cliente').addClass('col-md-4');
+                $('#div_id_n_de_part').addClass('col-md-4');
+                $('#div_id_descricao').addClass('col-md-4');
+                $('#div_id_tutorial').addClass('col-md-4');
+                $('#div_id_ver').addClass('col-md-4');
+              });        
+        </script>
+    
 
 </body>
 
