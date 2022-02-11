@@ -7,6 +7,7 @@
     <title>Listagem de Cadastros</title>
     {% endblock %}
         {% block conteudo %}
+<<<<<<< HEAD
         <div class="d-flex bd-highlight mt-2 mb-3">
             <div class="p-2 bd-highlight">
                 <h3>Listagem de Cadastros</h3>
@@ -64,6 +65,55 @@
                     </tbody>
                 </table>
             </div>
+=======
+
+            <h1 class="h3 mb-4 text-gray-800">Listagem de Cadastros</h1>
+                            
+            <hr>
+
+            <table class="table table-bordered" id="dataListagens" width="100%" cellspacing="0">
+                            <thead >
+                                <tr>
+                                    <th>Grupo</th>
+                                    <th>Clientes</th>
+                                    <th>Projeto</th>
+                                    <th>Numero de Participantes</th>
+                                    <th>Descricao</th>
+                                    <th>Tutorial</th>
+                                    <th>Ver</th>
+                                    <th>Status</th>
+                                    <th>Datas</th>
+                                    <th>Editar</th>
+                                    <th>Excluir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {% for item in object_list %}
+
+                                <tr>
+                                    <td scope="row">{{ item.grupo }}</td>
+                                    <td>{{ item.projeto }}</td>
+                                    <td>{{ item.cliente }}</td>
+                                    <td>{{ item.n_de_part }}</td>
+                                    <td>{{ item.descricao }}</td>
+                                    <td>{{ item.tutorial }}</td>
+                                    <td>{{ item.ver }}</td>
+                                    <td>{{ item.status }}</td>
+                                    <td>{{ item.datas }}</td>
+                                    <td><a href="{% url 'update' item.pk %}" class="btn btn-warning">editar</a></td>
+                                    <td><a href="{% url 'deletar' item.pk %}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a> </td>
+                                </tr>
+                                                    
+                                {% empty %}
+                                
+                                    Nada foi registrado
+                                
+                                {% endfor %}
+
+                            </tbody>
+            </table>
+>>>>>>> e1acaf54f9fdc2a5f92733ce8212c611286d34be
 
         {% endblock %}
 
