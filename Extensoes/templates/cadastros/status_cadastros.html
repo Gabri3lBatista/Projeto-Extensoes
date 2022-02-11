@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+    {% block titulo %}
+    <title>Status</title>
+    {% endblock %}
+
+
+        {% block conteudo %}
+
+            <h1 class="h3 mb-4 text-gray-800">Status do Grupo</h1>
+                            
+            <hr>
+
+            <div class="form-check form-check-inline size-30px" >
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+              </div>
+
+        {% endblock %}

@@ -13,7 +13,7 @@ def abertura(request):
 # pagina cadastro - C
 class GruposCad(CreateView):
     model = Grupos
-    fields = ['grupo','projeto','cliente','n_de_part','descricao', 'tutorial', 'ver', 'status', 'datas'] 
+    fields = ['grupo','projeto','cliente','n_de_part','descricao', 'tutorial', 'ver', 'status', 'dataIni', 'dataFim'] 
     template_name = 'cadastros/index_cadastros.html'
     success_url = reverse_lazy('listagem')
 
@@ -33,4 +33,9 @@ class GruposUpdate(UpdateView):
 class GruposDelete(DeleteView):
     model = Grupos
     template_name = 'cadastros/excluir_cadastros.html'
+    success_url = reverse_lazy('listagem')
+
+class GruposStatus(ListView):
+    model = Grupos
+    template_name = 'cadastros/status_cadastros.html'
     success_url = reverse_lazy('listagem')

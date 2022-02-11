@@ -9,9 +9,12 @@ class Grupos(models.Model):
     tutorial = models.CharField('tutorial', max_length=200)
     ver = models.CharField('ver', max_length=200)
     status = models.CharField('status', max_length=200)
-    datas = models.DateField()
+    dataIni = models.DateField(blank=True)
+    dataFim = models.DateField(blank=True)
     
     def __str__(self):
         return self.grupo
 # Create your models here.
 # Create your models here.
+
+
