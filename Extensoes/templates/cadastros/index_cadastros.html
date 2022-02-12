@@ -1,11 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'partials/base.html' %}
 
 {% load static %}
   
-    {% block titulo %}
-    <title>Cadastros</title>
-    {% endblock %}
-
+<title>{% block titulo %} Cadastros {% endblock %} </title>
 
     {% load crispy_forms_tags %}
     

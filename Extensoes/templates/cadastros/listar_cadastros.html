@@ -1,10 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'partials/base.html' %}
 
 {% load static %}
 
-    {% block titulo %}
-    <title>Listagem de Cadastros</title>
-    {% endblock %}
+<title>{% block titulo %} Listagem de Cadastros {% endblock %} </title>
+
         {% block conteudo %}
         <div class="d-flex bd-highlight mt-2 mb-3">
             <div class="p-2 bd-highlight">

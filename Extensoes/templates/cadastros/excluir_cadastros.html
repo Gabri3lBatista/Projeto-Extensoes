@@ -1,10 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'partials/base.html' %}
 
 {% load static %}
  
-    {% block titulo %}
-    <title>Deletar</title>
-    {% endblock %}
+<title>{% block titulo %} Deletar {% endblock %} </title>
 
     {% load crispy_forms_tags %}
     {% block conteudo %}

@@ -1,12 +1,9 @@
 
-{% extends 'base.html' %}
+{% extends 'partials/base.html' %}
 
 {% load static %}
 
-    {% block titulo %}
-    <title>Status</title>
-    {% endblock %}
-
+<title>{% block titulo %} Status {% endblock %} </title>
 
         {% block conteudo %}
 
