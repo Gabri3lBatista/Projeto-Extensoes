@@ -28,18 +28,18 @@
                             <th>Projeto</th>
                             <th>Número de Participantes</th>
                             <th>Descrição</th>
-                            <th>Tutorial</th>
-                            <th>Datas<th>
-                            <th class="text-center" >Ver</th>                        
-                            <th class="text-center" >Ações</th>
+                            <th >Tutorial</th>
+                            <th class="text-center">Datas</th>                                   
+                            <th class="text-center">Ver</th>                   
+                            <th class="text-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>    
                         {% for item in object_list %}    
                         <tr>
                             <td scope="row">{{ item.grupo }}</td>
-                            <td>{{ item.projeto }}</td>
                             <td>{{ item.cliente }}</td>
+                            <td>{{ item.projeto }}</td>  
                             <td>{{ item.n_de_part }}</td>
                             <td>{{ item.descricao }}</td>
                             <td>{{ item.tutorial }}</td>
@@ -52,11 +52,11 @@
                                     Link
                                 </a>
                             </td>
-                            <td class="text-center" >
+                            <td class="text-center">
 
                                 <a href="#" class="btn btn-secondary mb-1"><i class="fas fa-list-ul "></i></a>
 
-                                <a href="{% url 'update' item.pk %}" class="btn btn-warning mb-1"><i class="fas fa-edit "></i></a>
+                                <a href="{% url 'update' item.pk %}" class="btn btn-warning mb-1"><i class="fas fa-edit"></i></a>
 
                                 <a href="{% url 'deletar' item.pk %}" class="btn btn-danger mb-1"><i class="fa fa-trash " aria-hidden="true"></i></a> 
                                  
@@ -85,7 +85,7 @@
                 $(document).ready(function() {
                     var table = $('#dataListagens').DataTable({
                         lengthChange: false,
-                        "scrollX": true, "scrollCollapse": true,
+                        
 
                         buttons: ['copy', 'excel', 'pdf', 'colvis']
                     });
