@@ -87,21 +87,20 @@
         {% endblock %}
 
         {% block afterjs %}
-            <script>
-              $("select").change(function() {
-                $(this).parent().submit();
-            })
-            </script>
-            <script>
-                $(document).ready(function() {
-                    var table = $('#dataListagens').DataTable({
-                        lengthChange: false,
-                         "scrollCollapse": true,
-                         "scrollX": true,
-                        buttons: ['copy', 'excel', 'pdf', 'colvis']
-                    });
-                    $('[data-toggle="tooltip"]').tooltip()
+        <script>
+          $("select").change(function() {
+            $(this).parent().submit();
+        })
+        </script>
+        <script>
+            $(document).ready(function() {
+                var table = $('#dataListagens').DataTable({
+                    lengthChange: false,
+                    buttons: ['copy', 'excel', 'pdf', 'colvis']
                 });
-            </script>
-        {% endblock %}
+                table.buttons().container()
+                    .appendTo('#dataListagens_wrapper .col-md-6:eq(0)');
+            });
+        </script>
+    {% endblock %}
  
