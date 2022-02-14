@@ -1,0 +1,49 @@
+{% extends 'partials/base2.html' %}
+
+{% load static %}
+  
+<title>{% block titulo %} Cadastros {% endblock %} </title>
+
+    {% load crispy_forms_tags %}
+    
+        {% block conteudo %}
+
+                {% if object.pk %}
+                    <h1 class="h3 mb-4 text-gray-800">Editando Cadastro</h1>
+                {% else %}
+                    <h1 class="h3 mb-4 text-gray-800">Cadastros</h1>
+                {% endif %}
+
+                    <form method="POST" action="" >
+                        <div id="" class="row bg-white rounded p-3">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-right  p-2">        
+                                {% if object.pk %}
+                                <button type="submit" class=" save btn btn-success">
+                                    <i class="fas fa-save"></i>
+                                    Salvar 
+                                </button>
+                                <a class="btn btn-secondary"  href="" >
+                                    <i class="fas fa-arrow-left"></i>
+                                    Voltar
+                                </a>
+                                {% else %}
+                                <button type="submit" class="save btn btn-success">
+                                    <i class="fas fa-save"></i>
+                                    Salvar
+                                </button>
+                                <a class="btn btn-secondary"  href="" >
+                                    <i class="fas fa-arrow-left"></i>
+                                    Voltar
+                                </a>
+                                {% endif %}
+        
+                            </div>
+                        </div> 
+                    </form>
+               
+
+        {% endblock %}
+    
+               

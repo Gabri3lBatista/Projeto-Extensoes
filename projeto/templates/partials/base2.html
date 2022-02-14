@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content=""> 
+    
+    <title>{% block titulo %} {% endblock %} </title>
+    
+    <link rel="icon" href="{% static 'img/logo_ufac.png' %}" type="image/png" sizes="16x16">
+
+    <!-- FONT AWESOME-->
+    <link href={% static "fontawesome-free/css/all.min.css" %} rel="stylesheet" type="text/css">
+
+    <!-- FONTS CSS-->
+    <link hhref={% static "css/style.css" %} rel="stylesheet">
+
+    <!-- FONTS CSS-->
+    <link hhref={% static "css/fonts.css" %} rel="stylesheet">
+
+    <!-- SB ADMIN 2 CSS-->
+    <link href={% static "css/sb-admin-2.min.css" %} rel="stylesheet">
+    
+    <!--DATA TABLE -->
+    <link href={% static "datatables/dataTables.bootstrap4.min.css" %} rel="stylesheet">
+    
+    <link href={% static "datatables/buttons.bootstrap4.min.css" %} rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        {% include 'partials/menu-lateral.html' %}
+        
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content" >
+
+                {% include 'partials/cabecalho.html' %}  
+
+                <div class="container-fluid">
+                    
+                    {% block conteudo %}
+                    ---
+                    {% endblock %}
+                    
+                </div>
+    </a>
+
+    {% include 'partials/modal-logout.html' %}
+    
+    <!-- JQUERY -->   
+    <script src={% static "jquery/jquery.min.js" %}></script> 
+
+    <!-- SCRIPRS JS-->   
+    <script src={% static "js/js/scripts.js" %}></script> 
+
+    <!-- BOOTSTRAP JS-->   
+    <script src={% static "bootstrap/js/bootstrap.bundle.min.js" %} ></script>
+
+    <!-- JQUEY EASING-->
+    <script src={% static "jquery-easing/jquery.easing.min.js" %} ></script>
+
+    <!-- SB ADMIN 2 JS-->
+    <script src={% static "js/sb-admin-2.min.js" %}></script>
+
+    <!-- DATA TABLE PLUGINS -->
+    <script src={% static "datatables/jquery.dataTables.min.js" %} ></script>
+
+    <script src={% static "datatables/dataTables.bootstrap4.min.js" %} ></script>        
+    
+    <script src={% static "datatables/dataTables.buttons.min.js" %}  ></script>
+
+    <script src= {% static "datatables/buttons.bootstrap4.min.js" %} ></script>
+
+    <script src={% static "datatables/buttons.html5.min.js"%} ></script>
+    
+    <script src={% static "datatables/buttons.print.min.js"%} ></script>
+    
+    <script src={% static "datatables/buttons.colVis.min.js"%} ></script>
+    
+    <script src={% static "datatables/jszip.min.js"%} ></script>
+    
+    <script src={% static "datatables/pdfmake.min.js"%} ></script>
+    
+    <script src={% static "datatables/vfs_fonts.js"%} ></script>
+
+    <script src={% static "js/demo/datatables-demo.js" %}></script>     
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+{% extends 'partials/base2.html' %}
+
+{% block titulo %} Projetos - UFAC {% endblock %}
+
+{% load static %}
+
+
+{% block conteudo %}
+
+    <div class="d-flex bd-highlight mt-2 mb-3">
+        <div class="p-2 bd-highlight">
+            <h3>Listagem de Cadastros</h3>
+        </div>
+        <div class="ml-auto p-2 bd-highlight">
+            <a class="btn text-white" style="background:#0d6efd;" href="">
+                <i class="fas fa-plus"></i>
+                Novo Cadastro
+            </a>
+        </div>
+    </div>
+
+        <div class="bg-white p-4 rounded">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" id="myInput" class="form-control" placeholder="Pesquisa" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-secondary" type="button" disabled><i class="fas fa-search"></i></button>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+              </div>
+
+            <table class="table table-bordered table-hover align-middle" id="dataListagens" width="100%" cellspacing="0">
+                
+                <thead class="" >            
+                    <tr class="table-secondary text-dark">
+                        <th class="text-center ">Grupo</th>
+                        <th class="text-center">Clientes</th>
+                        <th class="text-center">Projeto</th>
+                        <th class="text-center">Número de <br> Participantes</th>
+                        <th class="text-center">Descrição</th>
+                        <th class="text-center">Tutorial</th>
+                        <th class="text-center">Data Inicio</th>                                   
+                        <th class="text-center">Ver</th>                   
+                        <th class="text-center">Ações</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>    
+                    {% for item in object_list %}  
+                        <tr>
+                            <td scope="row " class="text-center align-middle">{{ item.grupo }}</td>
+                            <td class="text-center align-middle">{{ item.cliente }}</td>
+                            <td class="text-center align-middle">{{ item.projeto }}</td>  
+                            <td class="text-center align-middle">{{ item.n_de_part }}</td>
+                            <td class="text-center align-middle">{{ item.descricao }}</td>
+                            <td class="text-center align-middle">{{ item.tutorial }}</td>
+                            <td class="align-middle">
+                                {{ item.dataIni|date:"d/m/Y"|default:"----" }} <br>
+                            </td>
+                            <td class="text-center align-middle" >
+                                <a href="{{ item.ver }}" class="btn btn-primary b" >
+                                    Link
+                                </a>
+                            </td>
+                            <td class="text-center  p-2 align-middle">       
+                                    
+                                <div class="d-flex flex-row bd-highlight">
+                                    <div class=" pr-1 bd-highlight">
+                                        <a href="#" class="element btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Sobre">
+                                            <i class="fas fa-list-ul " ></i>
+                                        </a>
+                                    </div>
+                                    <div class=" pr-1 bd-highlight">
+                                        <a href="{% url 'projetos:update' item.pk %}" class=" element btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </div>
+                                    <div class=" pr-1 bd-highlight">
+                                        <a href="">
+                                            <button  class=" btn btn-danger">
+                                                <i class="fa fa-trash " aria-hidden="true"></i>
+                                            </button> 
+                                        </a>
+                                    </div>
+                                </div>                            
+                            </td>
+                        </tr> 
+     
+                    {% empty %}
+                        Nada foi registrado
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        
+    {% endblock %}
+    

@@ -1,0 +1,24 @@
+{% extends 'partials/base2.html' %}
+
+{% block titulo %} login - UFAC {% endblock %}
+
+{% load static %}
+
+
+{% block conteudo %}
+    <form method="POST">
+        {% csrf_token %} 
+        <h1 class="h3 mb-4 text-gray-800"> login </h1>
+        <div class="form-group">
+            <label for="login">email</label>
+            <input type="text"
+                class="form-control" name="email" id="" aria-describedby="helpId" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="senha">senha</label>
+            <input type="password"
+                class="form-control" name="senha" id="" aria-describedby="helpId" placeholder="">
+        </div>
+        <input class="btn btn-primary" type="submit" value="entrar">
+    </form>
+{% endblock %}
