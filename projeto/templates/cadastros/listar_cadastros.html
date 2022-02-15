@@ -1,4 +1,4 @@
-{% extends 'partials/base.html' %}
+{% extends 'partials/base2.html' %}
 
 {% load static %}
 
@@ -10,7 +10,7 @@
                 <h3>Listagem de Cadastros</h3>
             </div>
             <div class="ml-auto p-2 bd-highlight">
-                <a class="btn" style="background-color:#0d6efd;" href="{% url 'cadastro' %}">
+                <a class="btn" style="background-color:#0d6efd;" href="{% url 'Listagem_Aluno' %}">
                     <i class="fas fa-plus"></i>
                     Novo Cadastro
                 </a>
@@ -22,34 +22,36 @@
                     
                     <thead class="" >                        
                         <tr class="table-secondary text-dark">
-                            <th class="text-center ">Grupo</th>
-                            <th class="text-center">Clientes</th>
-                            <th class="text-center">Projeto</th>
-                            <th class="text-center">Número de <br> Participantes</th>
-                            <th class="text-center">Descrição</th>
-                            <th class="text-center">Tutorial</th>
-                            <th class="text-center">Data Inicio</th>                                   
-                            <th class="text-center">Ver</th>                   
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Curso</th>
+                            <th class="text-center">Universidade</th>
+                            <th class="text-center">Lattes</th>
+                            <th class="text-center">Git</th>
+                            <th class="text-center">Observacao</th>                                                                       
                             <th class="text-center">Ações</th>
                         </tr>
                     </thead>
                     <tbody>    
                         {% for item in object_list %}    
                         <tr>
-                            <td scope="row " class="text-center align-middle">{{ item.grupo }}</td>
-                            <td class="text-center align-middle">{{ item.cliente }}</td>
-                            <td class="text-center align-middle">{{ item.projeto }}</td>  
-                            <td class="text-center align-middle">{{ item.n_de_part }}</td>
-                            <td class="text-center align-middle">{{ item.descricao }}</td>
-                            <td class="text-center align-middle">{{ item.tutorial }}</td>
-                            <td class="align-middle">
-                                {{ item.dataIni|date:"d/m/Y"|default:"----" }} <br>
-                            </td>
+                            <td scope="row " class="text-center align-middle">{{ item.nome }}</td>
+                            <td class="text-center align-middle">{{ item.email }}</td>
+                            <td class="text-center align-middle">{{ item.curso }}</td>  
+                            <td class="text-center align-middle">{{ item.universidade }}</td>
                             <td class="text-center align-middle" >
-                                <a href="{{ item.ver }}" class="btn btn-primary b" >
+                                <a href="{{ item.lattes }}" class="btn btn-primary b" >
                                     Link
                                 </a>
                             </td>
+                
+                            <td class="text-center align-middle" >
+                                <a href="{{ item.git }}" class="btn btn-primary b" >
+                                    Link
+                                </a>
+                            </td>
+                            <td class="text-center align-middle">{{ item.observacao }}</td>                     
+
                             <td class="text-center  p-2 align-middle">       
                                      
                                 <div class="d-flex flex-row bd-highlight">
