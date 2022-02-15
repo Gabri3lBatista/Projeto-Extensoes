@@ -1,20 +1,17 @@
 
 $(document).ready(function(){
 
+   $('.form-group').addClass('col-md-4');
+   $('#div_id_tutorial').addClass('col-md-12');
+   $('.asteriskField').css('color', 'red')
+   $('label').css('color', 'black')
+   $('#id_dataIni, #id_dataFim').attr('type', 'date');
+  $('#div_id_observacao').addClass('col-md-8');
+
+
    
     //Carregar os Formulários
-    $('#div_id_grupo').addClass('col-md-4');
-    $('#div_id_projeto').addClass('col-md-4');
-    $('#div_id_cliente').addClass('col-md-4');
-    $('#div_id_n_de_part').addClass('col-md-4');
-    $('#div_id_descricao').addClass('col-md-4');
-    $('#div_id_tutorial').addClass('col-md-12');
-    $('#div_id_ver').addClass('col-md-4');
-    $('#div_id_status').addClass('col-md-4');
-    $('#div_id_dataIni').addClass('col-md-4');
-    $('#div_id_dataFim').addClass('col-md-4');
-    $('span:contains("*")').css('color', 'red');
-
+   
     var table = $('#dataListagens').DataTable({
         lengthChange: false,
         fixedColumns: false,

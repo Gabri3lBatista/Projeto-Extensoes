@@ -15,7 +15,6 @@ def verificacao(request):
     except:
         return False
  
-       
 def login(request):
     
     if verificacao(request):
@@ -40,7 +39,8 @@ def login(request):
                 request.session['id'] = usuario.id
                 return HttpResponseRedirect('/')
         
-    return TemplateResponse(request, template_name, locals())
+    return TemplateResponse(request, template_name, locals())       
+
  
     
 def logout(request):
@@ -52,8 +52,9 @@ def logout(request):
         pass
     
     return HttpResponseRedirect('/')
-   
-    
+ 
+
+
 class AlunosCad(CreateView):
     model = Aluno
     fields = ['nome','email','cpf','curso','universidade','lattes','git','observacao']
