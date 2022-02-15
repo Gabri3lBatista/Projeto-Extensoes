@@ -59,9 +59,9 @@ class AlunosCad(CreateView):
     model = Aluno
     fields = ['nome','email','cpf','curso','universidade','lattes','git','observacao']
     template_name = 'usuario/cadastro_aluno.html'
-    success_url = reverse_lazy('projetos:listagem')
+    success_url = reverse_lazy('usuario:alunos_listagem')
 
 
 class AlunosListagem(ListView):
     model = Aluno
-    template_name = 'projetos/listagem_projeto.html'
+    template_name = 'usuario/listar_cadastros.html'
