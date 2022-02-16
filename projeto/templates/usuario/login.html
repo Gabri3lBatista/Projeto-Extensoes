@@ -1,24 +1,63 @@
 {% extends 'partials/base2.html' %}
 
-{% block titulo %} login - UFAC {% endblock %}
+{% block titulo %} Login - UFAC {% endblock %}
 
 {% load static %}
 
-
 {% block conteudo %}
-    <form method="POST">
-        {% csrf_token %} 
-        <h1 class="h3 mb-4 text-gray-800"> login </h1>
-        <div class="form-group">
-            <label for="login">email</label>
-            <input type="text"
-                class="form-control" name="email" id="" aria-describedby="helpId" placeholder="">
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="bg-white p-4 mt-5 mx-auto rounded" style="width:70%;">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <img src="{% static 'img/logo.png' %}" width="70px">
+                </div>
+                <div>
+                    <h4 class="text-center py-4" >
+                        Área Restrita
+                    </h4>
+                </div>
+                {% if error_message is not None %}
+                    <div class="alert alert-danger">
+                        {{error_message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+                <div class="text-center">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <div class="fas fa-user"></div>
+                            </span>
+                        </div>
+                        <input type="email" name="email" id="email-acesso" class="form-control form-control-lg" placeholder="Email"  required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-key"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="senha" id="senha-acesso" class="form-control form-control-lg" placeholder="Senha" required>
+                    </div>
+                   <div>
+                        
+                        <button type="submit" class="btn btn-success m-2 btn-inline">
+                            <i class="fas fa-sign-in-alt"></i> Entrar
+                        </button>
+                        <br>
+                        <a href="{% url 'usuario:Cadastrar_Aluno' %}" class="btn btn-primary btn-inline">
+                            <i class="fas fa-book-reader"></i> Cadastre-se
+                        </a>
+                   </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="senha">senha</label>
-            <input type="password"
-                class="form-control" name="senha" id="" aria-describedby="helpId" placeholder="">
-        </div>
-        <input class="btn btn-primary" type="submit" value="entrar">
-    </form>
+    </div>
+</form>
+
 {% endblock %}

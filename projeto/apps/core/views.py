@@ -8,8 +8,9 @@ def index(request):
     template_name = 'index.html'
     
     try:
-        email = request.session["email"]
-        nome = request.session["nome"]
+        id_usuario = request.session["id"]
+        email_usuario = request.session["email"]
+        nome_usuario = request.session["nome"]
     except:
         pass
     return TemplateResponse(request, template_name, locals())

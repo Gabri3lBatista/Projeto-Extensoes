@@ -2,20 +2,23 @@
 
 {% load static %}
 
-<title>{% block titulo %} Listagem de Cadastros {% endblock %} </title>
+<title>{% block titulo %} Listagem de Alunos - UFAC{% endblock %} </title>
 
         {% block conteudo %}
-        <div class="d-flex bd-highlight mt-2 mb-3">
-            <div class="p-2 bd-highlight">
-                <h3>Listagem de Cadastros</h3>
+        <div class="d-flex bd-highlight my-3">
+            <div class=" align-middle bd-highlight">
+                <h3>Usuários</h3>
             </div>
-            <div class="ml-auto p-2 bd-highlight">
-          
+            <div class="ml-auto  bd-highlight">
+                <a class="btn btn-primary"  href="{% url 'usuario:Cadastrar_Aluno' %}">
+                    <i class="fas fa-plus"></i>
+                    Novo Cadastro
+                </a>
             </div>
           </div>
 
             <div class="bg-white p-4 rounded">
-                <table class="table table-bordered table-hover align-middle" id="dataListagens" width="100%" cellspacing="0">
+                <table class="table table-sm table-bordered table-hover align-middle" id="dataListagens" width="100%" cellspacing="0">
                     
                     <thead class="" >                        
                         <tr class="table-secondary text-dark">
@@ -24,8 +27,7 @@
                             <th class="text-center">Curso</th>
                             <th class="text-center">Universidade</th>
                             <th class="text-center">Lattes</th>
-                            <th class="text-center">Git</th>
-                            <th class="text-center">Observacao</th>                                                                       
+                            <th class="text-center">Git</th>                                                                     
                             <th class="text-center">Ações</th>
                         </tr>
                     </thead>
@@ -37,33 +39,62 @@
                             <td class="text-center align-middle">{{ item.curso }}</td>  
                             <td class="text-center align-middle">{{ item.universidade }}</td>
                             <td class="text-center align-middle" >
-                                <a href="{{ item.lattes }}" class="btn btn-primary b" >
-                                    Link
+                                <a  href="{{ item.lattes }}" 
+                                    class="btn btn-primary" 
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Link"
+                                    style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                                >
+                                    <i class="fab fa-wpforms" ></i>
                                 </a>
                             </td>
                 
                             <td class="text-center align-middle" >
-                                <a href="{{ item.git }}" class="btn btn-primary b" >
-                                    Link
+                                <a  href="{{ item.git }}" 
+                                    class="btn btn-primary" 
+                                    data-toggle="tooltip"
+                                    data-placement="bottom"
+                                    title="Link"
+                                    style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                                >
+                                    <i class="fab fa-github"></i>
                                 </a>
                             </td>
-                            <td class="text-center align-middle">{{ item.observacao }}</td>                     
+                                              
 
-                            <td class="text-center  p-2 align-middle">       
-                                     
-                                <div class="d-flex flex-row bd-highlight">
-                                    
-                                    <div class=" pr-1 bd-highlight">
-                                        <a href="" class=" element btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar">
-                                            <i class="fas fa-edit"></i>
+                            <td class="text-center align-middle">       
+                                <div class="d-flex justify-content-center">
+                                    <div class="mx-1">
+                                        <a href=""
+                                           class="btn btn-secondary"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Sobre"
+                                           style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                            <i class="fas fa-list-ul"></i>
                                         </a>
                                     </div>
-                                    <div class=" pr-1 bd-highlight">
-                                        <button  class=" btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-                                            <i class="fa fa-trash " aria-hidden="true"></i>
-                                        </button> 
+                                    <div class="mx-auto">
+                                        <a href="{% url 'usuario:update' item.pk %}"
+                                           class="btn btn-warning"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           title="Editar"
+                                           style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                            <i class=" fas fa-edit"></i>
+                                        </a>
                                     </div>
-                                </div>                            
+                                    <div class="mx-1">
+                                        <button class="btn text-white"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title="Excluir"
+                                                style=" background:#dc3545; padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>                                                        
 
                             </td>
                         </tr>

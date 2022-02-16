@@ -10,6 +10,7 @@ urlpatterns = [
     path('', login, name='login'),
     path('logout', logout, name='logout'),
     path('Cadastrar_Aluno', AlunosCad.as_view(), name='Cadastrar_Aluno'),
+    path('update/<int:pk>', AlunosUpdate.as_view() , name='update'),
     path('alunos_listagem/', AlunosListagem.as_view(), name='alunos_listagem'),
 
 ]
