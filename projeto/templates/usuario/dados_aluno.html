@@ -1,0 +1,75 @@
+{% extends 'partials/base2.html' %}
+{% block titulo %}Projetos - UFAC{% endblock %}
+{% load static %}
+{% block conteudo %}
+    <div class="d-flex bd-highlight my-3">
+        <div class="align-middle bd-highlight">
+            <h4>Dados do Aluno</h4>
+        </div>     
+        
+    </div>
+        <div class="bg-white p-3">
+            
+            <table class="display table-bordered table table-striped" style="width:100%"  id="dado-projeto">
+                
+            {% for aluno in dados_aluno %}
+                <tbody>
+                    {% csrf_token %}
+                    <tr>
+                        <th>Nome</th>
+                        <td>{{aluno.nome}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td> {{aluno.email}} </td>
+                    </tr>
+                    <tr>
+                        <th>CPF</th>
+                        <td>{{aluno.cpf}}</td>
+                    </tr>
+                    <tr>
+                        <th>Curso</th>
+                        <td>{{aluno.curso}}</td>
+                    </tr>
+                    <tr>
+                        <th>Universidade</th>
+                        <td>{{aluno.universidade}}</td>
+                    </tr>        
+                    <tr>
+                        <th>Observação</th>
+                        <td>{{aluno.observacao}}</td>
+                    </tr>       
+                    <tr>
+                        <th>GIT</th>
+                        <td><a href="{{ aluno.git }}"
+                            style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                            target="_blank"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Visualizar">
+                            Git
+                         </a></td>
+                    </tr>       
+                    <tr>
+                        <th>LATTES</th>
+                        <td><a href="{{ aluno.latter }}"
+                            style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                            target="_blank"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Visualizar">
+                            Lattes
+                         </a></td>
+                    </tr>       
+        
+                </tbody>
+            {% endfor %}
+            </table>
+        
+            <a  href="{% url 'usuario:alunos_listagem' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </a>
+    </div>
+
+{% endblock %}

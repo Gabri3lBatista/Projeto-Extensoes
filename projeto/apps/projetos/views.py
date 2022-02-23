@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+
 from .models import Grupos
 
 #serve para redirecionar pagina
@@ -42,9 +43,10 @@ class GruposStatus(ListView):
 
 
 
-
-
-
+def dados_projeto(request, pk):
+    a_list = Grupos.objects.filter(id=pk)
+    context = {'dados': a_list}
+    return render(request, 'projetos/dados_projeto.html', context)
 
 # from django.http import HttpResponseRedirect
 # from django.template.response import TemplateResponse

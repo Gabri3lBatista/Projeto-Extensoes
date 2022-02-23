@@ -1,32 +1,27 @@
 {% load static %}
 
+<!-- BARRA SUPERIOR-->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-1 static-top shadow">
 
-    <!-- BOTÃO HAMBURGUER -->
+    <!-- BOTÃO SUPERIOR OCULTAR MENU LATERAL SM  -->
     <div class="border-right">
-
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-2">
             <i class="fa fa-bars"></i>
-        </button>
-        
+        </button>        
     </div>
 
-    <!-- TOP BAR -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <!-- TÍTULO BARRA SUPERIOR -->
+    <div class="d-none d-sm-inline-block ">
+        <h4 class="text-dark" >Projeto de Extensão</h4>
 
-        <div class="input-group ml-3">
-            {{email_usuario}}
-        </div>
+    </div>
 
-    </form>
-
-    <!-- TOP BAR NAVBAR -->
-    <ul class="navbar-nav ml-auto">
-        <!-- NAV ITEM -->
+    <!-- OPÇÕES LOGIN BARRA SUPERIOR -->
+    <ul class="navbar-nav ml-auto border-left">
+        <!-- BOTÃO LOGIN-->
         <li class="nav-item dropdown no-arrow">
-
             <a 
-                class="nav-link dropdown-toggle border-left" 
+                class="nav-link dropdown-toggle" 
                 href="#" id="userDropdown" 
                 role="button" 
                 data-toggle="dropdown" 
@@ -40,8 +35,8 @@
                 <i class="fas fa-user-circle text-secondary" style="font-size:30px;"></i>
             </a>
 
-            <!-- Dropdown -->
-            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in p-0" aria-labelledby="userDropdown">
+            <!-- MENU FLUTUANTE (LOGIN) -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in p-0 " aria-labelledby="userDropdown">
 
                 {% if id_usuario is None %}
                     <a class="dropdown-item py-3" href="{% url 'usuario:login' %}">

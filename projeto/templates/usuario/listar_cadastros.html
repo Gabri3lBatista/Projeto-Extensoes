@@ -1,136 +1,113 @@
 {% extends 'partials/base2.html' %}
-
 {% load static %}
-
-<title>{% block titulo %} Listagem de Alunos - UFAC{% endblock %} </title>
-
-        {% block conteudo %}
-        <div class="d-flex bd-highlight my-3">
-            <div class=" align-middle bd-highlight">
-                <h3>Usuários</h3>
-            </div>
-            <div class="ml-auto  bd-highlight">
-                <a class="btn btn-primary"  href="{% url 'usuario:Cadastrar_Aluno' %}">
-                    <i class="fas fa-plus"></i>
-                    Novo Cadastro
-                </a>
-            </div>
-          </div>
-
-            <div class="bg-white p-4 rounded">
-                <table class="table table-sm table-bordered table-hover align-middle" id="dataListagens" width="100%" cellspacing="0">
-                    
-                    <thead class="" >                        
-                        <tr class="table-secondary text-dark">
-                            <th class="text-center">Nome</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Curso</th>
-                            <th class="text-center">Universidade</th>
-                            <th class="text-center">Lattes</th>
-                            <th class="text-center">Git</th>                                                                     
-                            <th class="text-center">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>    
-                        {% for item in object_list %}    
-                        <tr>
-                            <td scope="row " class="text-center align-middle">{{ item.nome }}</td>
-                            <td class="text-center align-middle">{{ item.email }}</td>
-                            <td class="text-center align-middle">{{ item.curso }}</td>  
-                            <td class="text-center align-middle">{{ item.universidade }}</td>
-                            <td class="text-center align-middle" >
-                                <a  href="{{ item.lattes }}" 
-                                    class="btn btn-primary" 
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Link"
-                                    style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
-                                >
-                                    <i class="fab fa-wpforms" ></i>
-                                </a>
-                            </td>
-                
-                            <td class="text-center align-middle" >
-                                <a  href="{{ item.git }}" 
-                                    class="btn btn-primary" 
-                                    data-toggle="tooltip"
-                                    data-placement="bottom"
-                                    title="Link"
-                                    style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
-                                >
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </td>
-                                              
-
-                            <td class="text-center align-middle">       
-                                <div class="d-flex justify-content-center">
-                                    <div class="mx-1">
-                                        <a href=""
-                                           class="btn btn-secondary"
-                                           data-toggle="tooltip"
-                                           data-placement="bottom"
-                                           title="Sobre"
-                                           style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
-                                            <i class="fas fa-list-ul"></i>
-                                        </a>
-                                    </div>
-                                    <div class="mx-auto">
-                                        <a href="{% url 'usuario:update' item.pk %}"
-                                           class="btn btn-warning"
-                                           data-toggle="tooltip"
-                                           data-placement="bottom"
-                                           title="Editar"
-                                           style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
-                                            <i class=" fas fa-edit"></i>
-                                        </a>
-                                    </div>
-                                    <div class="mx-1">
-                                        <button class="btn text-white"
-                                                data-toggle="tooltip"
-                                                data-placement="bottom"
-                                                title="Excluir"
-                                                style=" background:#dc3545; padding-top: 0.7rem; padding-bottom: 0.7rem; ">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </div>
-                                </div>                                                        
-
-                            </td>
-                        </tr>
-                                            
-                        {% empty %}
-                        
-                            Nada foi registrado
-                        
-                        {% endfor %}
-    
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<title>
+    {% block titulo %}Listagem de Alunos - UFAC{% endblock %}
+</title>
+{% block conteudo %}
+    <div class="d-flex bd-highlight my-3">
+        <div class=" align-middle bd-highlight">
+            <h3>Alunos</h3>
+        </div>
+        <div class="ml-auto align-middle bd-highlight">
+            <a class="btn btn-primary"  href="{% url 'usuario:Cadastrar_Aluno' %}">
+                <i class="fas fa-plus"></i>
+                Novo Cadastro
+            </a>
+        </div>
+    </div>
+    <div class="bg-white p-4 rounded">
+        <table class="table table-sm table-bordered table-hover align-middle"
+               id="dataListagens"
+               width="100%"
+               cellspacing="0">
+            <thead class="">
+                <tr class="table-secondary text-dark">
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Curso</th>
+                    <th class="text-center">Universidade</th>
+                    <th class="text-center">Lattes</th>
+                    <th class="text-center">Git</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in object_list %}
+                    <tr>
+                        <td scope="row " class="text-center align-middle">{{ item.nome }}</td>
+                        <td class="text-center align-middle">{{ item.email }}</td>
+                        <td class="text-center align-middle">{{ item.curso }}</td>
+                        <td class="text-center align-middle">{{ item.universidade }}</td>
+                        <td class="text-center align-middle">
+                            <a href="{{ item.lattes }}"
+                               class="btn btn-primary"
+                               style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                <i class="fab fa-wpforms"></i>
+                            </a>
+                        </td>
+                        <td class="text-center align-middle">
+                            <a href="{{ item.git }}"
+                               class="btn btn-primary"
+                               style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </td>
+                        <td class="text-center align-middle">
+                            <div class="d-flex justify-content-center">
+                                <div class="mx-1">
+                                    <a href="{% url 'usuario:dados_aluno' item.pk %}"
+                                       class="btn btn-secondary"
+                                       style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                        <i class="fas fa-list-ul"></i>
+                                    </a>
+                                </div>
+                                <div class="mx-auto">
+                                    <a href="{% url 'usuario:update' item.pk %}"
+                                       class="btn btn-warning"
+                                       style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                        <i class=" fas fa-edit"></i>
+                                    </a>
+                                </div>
+                                <div class="mx-1">                                     
+                                    {% include 'usuario/exclui_aluno.html' %}
+                                    <button class="btn text-white" data-toggle="modal" data-target="#excluiAluno"
+                                            style=" background:#dc3545; padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% empty %}
+                    Nada foi registrado
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade"
+         id="exampleModal"
+         tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <input class="save btn btn-danger" type="submit" value="Sim" data-dismiss="modal" delete>
-                            
-                        
-                            {% comment %} <button type="submit" class="save btn btn-danger" data-dismiss="modal">sim</button>
-                               
-                        <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
-                    </div>
-                  </div>
+                    </button>
                 </div>
-              </div>
-
-        {% endblock %}
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <input class="save btn btn-danger"
+                           type="submit"
+                           value="Sim"
+                           data-dismiss="modal"
+                           delete>
+                    {% comment %} <button type="submit" class="save btn btn-danger" data-dismiss="modal">sim</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

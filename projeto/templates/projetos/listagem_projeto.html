@@ -12,7 +12,6 @@
                 Novo Cadastro
             </a>
         </div>
-        
     </div>
     <div class="bg-white p-4 m-auto rounded">
         <table class="table table-sm table-hover table-bordered"
@@ -23,9 +22,7 @@
                 <tr>
                     <th class="align-middle text-center">Projeto</th>
                     <th class="align-middle text-center">Clientes</th>
-                    <th class="align-middle text-center">Número de Participantes</th>
                     <th class="align-middle text-center">Descrição</th>
-                    <th class="align-middle text-center">Tutorial</th>
                     <th class="align-middle text-center">Data Inicio</th>
                     <th class="align-middle text-center">Link</th>
                     <th class="align-middle text-center">Ações</th>
@@ -36,9 +33,7 @@
                     <tr>
                         <td class="text-center align-middle">{{ item.projeto }}</td>
                         <td class="text-center align-middle">{{ item.cliente }}</td>
-                        <td class="text-center align-middle">{{ item.n_de_part }}</td>
                         <td class="text-center align-middle">{{ item.descricao }}</td>
-                        <td class="text-center align-middle">{{ item.tutorial }}</td>
                         <td class=" text-center align-middle">{{ item.dataIni|date:"d/m/Y"|default:"----" }}</td>
                         <td class="text-center align-middle">
                             <a href="{{ item.ver }}"
@@ -51,14 +46,11 @@
                                 <i class="fas fa-link"></i>
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center align-middle">
                             <div class="d-flex justify-content-around flex-nowrap ">
                                 <div class="mx-1">
-                                    <a href="#"
+                                    <a href="{% url 'projetos:dados' item.pk %}"
                                        class="btn btn-secondary"
-                                       data-toggle="tooltip"
-                                       data-placement="bottom"
-                                       title="Sobre"
                                        style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
                                         <i class="fas fa-list-ul"></i>
                                     </a>
@@ -66,18 +58,12 @@
                                 <div class="mx-auto">
                                     <a href="{% url 'projetos:update' item.pk %}"
                                        class="btn btn-warning"
-                                       data-toggle="tooltip"
-                                       data-placement="bottom"
-                                       title="Editar"
                                        style=" padding-top: 0.7rem; padding-bottom: 0.7rem; ">
                                         <i class=" fas fa-edit"></i>
                                     </a>
                                 </div>
                                 <div class="mx-1">
                                     <button class="btn text-white"
-                                            data-toggle="tooltip"
-                                            data-placement="bottom"
-                                            title="Excluir"
                                             style=" background:#dc3545; padding-top: 0.7rem; padding-bottom: 0.7rem; ">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>

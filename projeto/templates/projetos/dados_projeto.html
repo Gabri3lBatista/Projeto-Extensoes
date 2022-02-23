@@ -1,0 +1,68 @@
+{% extends 'partials/base2.html' %}
+{% block titulo %}Projetos - UFAC{% endblock %}
+{% load static %}
+{% block conteudo %}
+    <div class="d-flex bd-highlight my-3">
+        <div class="align-middle bd-highlight">
+            <h4>Dados do Projeto</h4>
+        </div>     
+        
+    </div>
+        <div class="bg-white p-3">
+            
+            <table class="display table-bordered table table-striped" style="width:100%"  id="dado-projeto">
+                
+            {% for grupos in dados %}
+                <tbody>
+                    {% csrf_token %}
+                    <tr>
+                        <th>Projeto</th>
+                        <td>{{grupos.projeto}}</td>
+                    </tr>
+                    <tr>
+                        <th>Clientes</th>
+                        <td> {{grupos.cliente}} </td>
+                    </tr>
+                    <tr>
+                        <th>Número de Participantes</th>
+                        <td>{{grupos.n_de_part}}</td>
+                    </tr>
+                    <tr>
+                        <th>Descrição</th>
+                        <td>{{grupos.descricao}}</td>
+                    </tr>
+                    <tr>
+                        <th>Tutorial</th>
+                        <td>{{grupos.tutorial}}</td>
+                    </tr>       
+                    <tr>
+                        <th>Data de Inicio</th>
+                        <td>{{grupos.dataIni}}</td>
+                    </tr>       
+                    <tr>
+                        <th>Data de Término</th>
+                        <td>{{grupos.dataFim}}</td>
+                    </tr>       
+                    <tr>
+                        <th>Link de Visualização</th>
+                        <td><a href="{{ grupos.ver }}"
+                            style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                            target="_blank"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Visualizar">
+                            Visuzalizar
+                         </a></td>
+                    </tr>       
+        
+                </tbody>
+            {% endfor %}
+            </table>
+        
+            <a  href="{% url 'projetos:listagem' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i>
+                Voltar
+            </a>
+    </div>
+
+{% endblock %}

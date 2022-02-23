@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <html lang="pt-br">
 
 <head>
@@ -42,7 +41,7 @@
         
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <div id="content" >
+            <div id="content">
 
                 {% include 'partials/cabecalho.html' %}  
 
@@ -53,6 +52,10 @@
                     {% endblock %}
                     
                 </div>
+            </div>  
+                
+            {% include 'partials/rodape.html' %}
+        </div>
     </a>
 
     {% include 'partials/modal-logout.html' %}

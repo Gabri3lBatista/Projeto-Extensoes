@@ -5,9 +5,11 @@ $(document).ready(function(){
     $('#div_id_tutorial').addClass('col-md-12');
     $('.asteriskField').css('color', 'red')
     $('label').css('color', 'black')
+    //$('span').addClass('text-uppercase')
     $('#id_dataIni, #id_dataFim').attr('type', 'date');
     $('#div_id_observacao').addClass('col-md-8');
-
+    $('th').css('color', 'black')
+    $('td').css('color', 'black')
    
     //Carregar os Formulários
    
@@ -65,7 +67,6 @@ $(document).ready(function(){
     table.buttons().container()
         .appendTo('#dataListagens_wrapper .col-md-6:eq(0)'
     );
- 
 
     var str = "";
     str += " <div class='input-group my-2 mx-0'>";

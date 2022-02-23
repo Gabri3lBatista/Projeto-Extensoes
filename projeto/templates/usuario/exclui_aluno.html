@@ -1,0 +1,31 @@
+<div class="modal fade" id="excluiAluno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fas fa-exclamation-triangle"></i> Aviso
+                </h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            </div>  
+            <div class="modal-body text-center p-3">
+               <h5>
+                 Tem certeza que deseja excluir esse Aluno?
+               </h5>
+            </div>
+
+            <div class="modal-footer">
+                 <a class="btn btn-secondary" href="{% url 'usuario:logout' %}">
+                    <i class="fas fa-check"></i>
+                    Sim
+                </a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                    <i class="fas fa-times"></i>
+                    Não
+                </button>
+               
+            </div>
+        </div>
+    </div>
+</div>

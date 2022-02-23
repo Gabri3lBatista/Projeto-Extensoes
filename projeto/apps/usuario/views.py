@@ -56,7 +56,8 @@ def logout(request):
         pass
     
     return HttpResponseRedirect('/')
- 
+
+
 
 
 class AlunosCad(CreateView):
@@ -76,3 +77,17 @@ class AlunosUpdate(UpdateView):
     fields = "__all__" 
     template_name = 'usuario/cadastro_aluno.html'
     success_url = reverse_lazy('usuario:alunos_listagem')
+
+def dados_aluno(request, pk):
+    list = Aluno.objects.filter(id=pk)
+    context = {'dados_aluno':  list }
+    return render(request, 'usuario/dados_aluno.html', context)
+
+def excluir_aluno(request, id):
+    try:
+        noticia = Noticia.objects.get(id=id)
+        noticia.delete()
+        msg = "Notícia Excluida com Sucesso!"
+    except:
+        msg = "Erro ao Excluir a Notícia!"
+    return HttpResponseRedirect("/admin/noticia/listagem/?msg=%s" % msg)

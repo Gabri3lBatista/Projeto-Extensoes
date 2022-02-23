@@ -1,0 +1,33 @@
+{% extends 'partials/base2.html' %}
+
+{% load static %}
+  
+<title>{% block titulo %} Cadastros {% endblock %} </title>
+
+    {% load crispy_forms_tags %}
+    
+        {% block conteudo %}
+
+                    <h1 class="h3 my-3 text-dark">Editar Dados</h1>              
+
+                    <form method="POST" action="" >
+                        <div id="" class="row bg-white rounded p-3">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="text-right col-md-12 ">        
+                                <button type="submit" class=" save btn text-white" style="background:#198754;">
+                                    <i class="fas fa-save"></i>
+                                    Salvar 
+                                </button>
+                                <a class="btn text-white"  href="" style="background:#6c757d;">
+                                    <i class="fas fa-arrow-left"></i>
+                                    Voltar
+                                </a>                             
+                            </div>
+                        </div> 
+                    </form>
+               
+
+        {% endblock %}
+    
+               
