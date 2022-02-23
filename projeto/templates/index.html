@@ -1,12 +1,62 @@
 {% extends 'partials/base2.html' %}
-
-{% block titulo %} Extensões - UFAC {% endblock %}
-
+{% block titulo %}Extensões - UFAC{% endblock %}
 {% load static %}
-
-
 {% block conteudo %}
-
-    <h1 class="h3 mb-4 text-gray-800"> Principal 1 </h1>
-
-{% endblock %}
+    <h1 class="h3 mb-4 text-gray-800">Projetos de Extensão - UFAC</h1>
+    <div class="bg-white p-4 m-auto rounded">
+        Os Projetos de Extensão da Universidade Federal do Acre - UFAC, tem como propósito o estudo e desenvolvimento de mentorias
+        com alunos do curso de Sistemas de Informação, Matemática, Física e público externo. Pensando no grande potencial voltado para programação,
+        sendo assim iremos promover todas essas mentorias voltadas exclusivamente para desenvolver projetos que serão utilizados por alguns
+        setores da UFAC além de cada aluno envolvido poder enriquecer ainda mais seu portifólio. Com este estudo os participantes estarão aptos a desenvolverem
+        sites e sistemas, além de aprenderem boas práticas de programação. O Aprendizado será voltado para o estudo da Linguagem de Progração Python.
+        Iremos estudar uma boa parte de estrutura lógica, condicional e de repetição.
+        <div class="my-3">
+            <h5 class="text-dark">Projetos a serem Desenvolvidos</h5>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header p-2">
+                    <h2 class="mb-0">
+                        <button class="btn btn-block text-left p-0"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne">
+                                "Projeto"
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne"
+                     class="collapse "
+                     aria-labelledby="headingOne"
+                     data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h6> Descrição</h6>
+                                <hr>
+                                <p>
+                                    AGENDAMENTO DE LABORATÓRIOS, QUADRA, AUDITÓRIOS
+                                </p>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <h6> Visualizar</h6>        
+                                <hr> 
+                                <p>
+                                    <a 
+                                        class="btn btn-primary"
+                                        style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
+                                        target="_blank">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </p>            
+                                   
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
