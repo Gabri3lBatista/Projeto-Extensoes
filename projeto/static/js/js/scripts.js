@@ -56,11 +56,6 @@ $(document).ready(function(){
                 extend: 'print',
                 text: "<i class='fas fa-print'></i> Imprimir"
 
-            },
-            {
-                extend: 'colvis',
-                text: " Visualizar"
-
             }
         ]
     });

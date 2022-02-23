@@ -34,15 +34,12 @@
                         <td class="text-center align-middle">{{ item.projeto }}</td>
                         <td class="text-center align-middle">{{ item.cliente }}</td>
                         <td class="text-center align-middle">{{ item.descricao }}</td>
-                        <td class=" text-center align-middle">{{ item.dataIni|date:"d/m/Y"|default:"----" }}</td>
+                        <td class=" text-center align-middle">{{ item.dataIni}}</td>
                         <td class="text-center align-middle">
                             <a href="{{ item.ver }}"
                                class="btn btn-primary"
                                style=" padding-top: 0.7rem; padding-bottom: 0.7rem; "
-                               target="_blank"
-                               data-toggle="tooltip"
-                               data-placement="top"
-                               title="Visualizar">
+                               target="_blank">
                                 <i class="fas fa-link"></i>
                             </a>
                         </td>
