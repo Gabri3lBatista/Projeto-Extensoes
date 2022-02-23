@@ -52,7 +52,7 @@
                                 <i class="fab fa-github"></i>
                             </a>
                         </td>
-                        <td class="text-center align-middle">
+                        <td class="text-center align-middle" style="width:150px;">
                             <div class="d-flex justify-content-center">
                                 <div class="mx-1">
                                     <a href="{% url 'usuario:dados_aluno' item.pk %}"
@@ -70,8 +70,8 @@
                                 </div>
                                 <div class="mx-1">                                     
                                     {% include 'usuario/exclui_aluno.html' %}
-                                    <button class="btn text-white" data-toggle="modal" data-target="#excluiAluno"
-                                            style=" background:#dc3545; padding-top: 0.7rem; padding-bottom: 0.7rem; ">
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#excluiAluno"
+                                            style="padding-top: 0.7rem; padding-bottom: 0.7rem; ">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </div>

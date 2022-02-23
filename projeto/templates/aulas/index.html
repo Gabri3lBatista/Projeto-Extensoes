@@ -1,55 +1,149 @@
 {% extends 'partials/base2.html' %}
-
-{% block titulo %} Extensões - UFAC {% endblock %}
-
+{% block titulo %}Extensões - UFAC{% endblock %}
 {% load static %}
-
-
 {% block conteudo %}
-    <h4 class="my-3"> Conteúdo</h4>
-    <div class="bg-white p-3 m-auto">
-              
-        
-        <p class="h6">Todos os projetos utilizaram o mesmo Template - 
-            <a class="btn btn-primary" href="http://apps-proex.ufac.br/grupos/templateBase.rar">Template</a>
-        </p>
-        
-        <p> GIT para projetos colaborativos:&nbsp;</p>
+<h4 class="my-3">Conteúdo</h4>
+    <div class="bg-white p-3 my-3">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="carousel-videos-youtube" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <iframe 
+                                src="https://www.youtube.com/embed/jSpx2t__Iv0"
+                                style="
+                                display: block;
+                                width: 100%;
+                                height: 500px;
+                                "
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe 
+                                src="https://www.youtube.com/embed/7Xcn6znmG2o"
+                                style="
+                                display: block;
+                                width: 100%;
+                                height: 500px;
+                                "
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe 
+                                src="https://www.youtube.com/embed/WIqC3WoV6gc"
+                                style="
+                                display: block;
+                                width: 100%;
+                                height: 500px;
+                                "
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    
+                    </div>
+                </div>
 
-        
-        <ol>
-            <li>Tutoriais - &nbsp;<a class="btn btn-primary" href="https://www.youtube.com/watch?v=MhutWNbdftE&amp;list=RDCMUCfLKJox9Gd5V57_0kzq-jKQ&amp;start_radio=1&amp;rv=MhutWNbdftE&amp;t=18" target="_blank">GIT</a></li>
-        </ol>
-        
-        <p>Sites para estudo:</p>
-        
-        <ol>
-            <li><a href="https://www.geeksforgeeks.org/django-form-field-custom-widgets/?ref=lbp" target="_blank">Django Forms</a></li>
-            <li><a href="https://www.geeksforgeeks.org/datefield-django-forms/?ref=lbp" target="_blank">DataField Django</a></li>
-            <li><a href="https://github.com/rodrigoamaral/django-fullcalendar" target="_blank">Django Fullcalendar</a></li>
-            <li><a href="https://github.com/nhn/tui.calendar?hmsr=joyk.com&amp;utm_source=joyk.com&amp;utm_medium=referral" target="_blank">Super Calendar</a></li>
-        </ol>
-        
-        <p>Videos das aulas</p>
-        
-        <ol>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/yi6jXuxb7bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-            <li>Parte 02: <a href="https://youtu.be/7Xcn6znmG2o" target="_blank">Model, view e urls</a></li>
-            <li>Parte 03: <a href="https://www.youtube.com/watch?v=WIqC3WoV6gc" target="_blank">Editar e Excluir</a></li>
-            <li>Template:&nbsp;<a href="https://www.youtube.com/watch?v=jSpx2t__Iv0" target="_blank">Inserir template</a></li>
-        </ol>
-        
-        <p>&nbsp;</p>
-        
-        <p>Estudos avançados</p>
-        
-        <ol>
-            <li>Criar seu site FREE -&nbsp;<a href="https://www.pythonanywhere.com/" target="_blank">https://www.pythonanywhere.com/</a></li>
-            <li>Fiz uns testes e funcionou</li>
-            <li>Se você tiver mais um pouquinho de paciência pode seguir o tutorial abaixo e subir um projeto seu:</li>
-            <li><a href="https://www.youtube.com/watch?v=f6PVDxCB08A&amp;t=700s" target="_blank">Tutorial como fazer deploy de um projeto Django usando Heroku [Python + Django + Heroku]</a></li>
-        </ol>
+                <div class="mt-3 text-center">
+                    <button type="button" class="btn btn-primary" onclick='$("#carousel-videos-youtube").carousel(0);'>
+                        Aula 1
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick='$("#carousel-videos-youtube").carousel(1);'>
+                        Aula 2
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick='$("#carousel-videos-youtube").carousel(2);'>
+                        Aula 3
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-4 my-3 my-md-0">
+                <div class="card  mb-3">
+                    <div class="card-header">Template</div>
+                    <div class="card-body text-dark">
+                        <p class="card-text ">
+                            Template Utilizado nos Projetos de 2022.
+                        </p>
+                    </div>
+                    <div class="card-footer text-dark">
+                        <a class="btn btn-primary" href="http://apps-proex.ufac.br/grupos/templateBase.rar">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                    </div>
+                </div>
+                <div class="card  mb-3">
+                    <div class="card-header">Projetos Colaborativos</div>
+                    <div class="card-body text-dark">
+                        <p class="card-text">
+                            GIT para projetos colaborativos.
+                        </p>
+                    </div>
+                    <div class="card-footer text-dark">
+                        <a class="btn btn-primary"
+                            href="https://www.youtube.com/watch?v=MhutWNbdftE&amp;list=RDCMUCfLKJox9Gd5V57_0kzq-jKQ&amp;start_radio=1&amp;rv=MhutWNbdftE&amp;t=18"
+                            target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            Visualizar
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="list-group  mb-3">
+                    <li href="#" class="bg-light list-group-item">Sites Para Estudo</li>
+                    <a href="https://www.geeksforgeeks.org/django-form-field-custom-widgets/?ref=lbp"
+                        class="list-group-item list-group-item-action text-primary" target="_blank">
+                        Django Forms
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/datefield-django-forms/?ref=lbp" target="_blank"
+                        class="list-group-item list-group-item-action text-primary">
+                        DataField Django
+                    </a>
+
+                    <a href="https://github.com/rodrigoamaral/django-fullcalendar" target="_blank"
+                        class="list-group-item list-group-item-action text-primary">
+                        Django Fullcalendar
+                    </a>
+
+                    <a href="https://github.com/nhn/tui.calendar?hmsr=joyk.com&amp;utm_source=joyk.com&amp;utm_medium=referral"
+                        target="_blank" class="list-group-item list-group-item-action text-primary">
+                        Super Calendar
+                    </a>
+
+                </div>
+
+                <div class="list-group  mb-3">
+                    <li href="#" class="bg-light list-group-item">Estudos Avançados</li>
+
+                    <a  
+                        href="https://www.pythonanywhere.com/"
+                        class="list-group-item list-group-item-action text-primary" 
+                        target="_blank">
+                        Criar seu site FREE
+                    </a>
+
+
+                    <a  
+                        href="https://www.youtube.com/watch?v=f6PVDxCB08A&amp;t=700s" 
+                        target="_blank" 
+                        class="list-group-item list-group-item-action text-primary">
+                        Deploy projeto Django usando Heroku [Python + Django + Heroku]
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    
     </div>
-
-
 {% endblock %}
